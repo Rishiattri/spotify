@@ -1,0 +1,17 @@
+﻿# Core cross-platform automation dependencies
+pyautogui>=0.9.54
+Pillow>=11.0.0
+pystray>=0.19.5
+psutil>=6.0.0
+
+# Linux X11 support
+python-xlib>=0.33
+
+# Optional global hotkeys (existing project usage)
+pynput>=1.7.7
+pygetwindow>=0.0.9
+numpy>=2.1.0
+pyperclip>=1.9.0
+
+# Modern HTML/CSS frontend (app_modern.py)
+pywebview>=5.0

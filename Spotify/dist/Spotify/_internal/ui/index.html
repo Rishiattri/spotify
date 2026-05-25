@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <button class="menu-btn" id="menuBtn" title="Menu">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+      </button>
+
+      <button class="library-btn" id="libraryBtn" title="Your Library">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 22V2h2v20H3zm4 0V2h2v20H7zm6-20l5 18-1.93.5L11 2.5 13 2z"/></svg>
+      </button>
+
+      <button class="add-btn" id="addBtn" title="Create">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+
+      <div class="thumb-stack" id="thumbStack">
+        <!-- Mix of square albums and circular artist portraits, like real Spotify library -->
+        <div class="thumb cover-palazzo"        title="Palazzo"></div>
+        <div class="thumb cover-arjan-photo circle" title="Arjan Dhillon"></div>
+        <div class="thumb cover-vlog"           title="Vlog"></div>
+        <div class="thumb cover-sidhu circle"   title="Sidhu Moose Wala"></div>
+        <div class="thumb cover-cheema-anyway"  title="Anyway"></div>
+        <div class="thumb cover-shubh circle"   title="Shubh"></div>
+        <div class="thumb cover-chobar"         title="Chobbar"></div>
+        <div class="thumb cover-karan circle"   title="Karan Aujla"></div>
+        <div class="thumb cover-sidhu-legend"   title="Legend"></div>
+        <div class="thumb cover-ap circle"      title="AP Dhillon"></div>
+        <div class="thumb cover-karan-ppop"     title="P-Pop Culture"></div>
+        <div class="thumb cover-nimrat-time"    title="Time Chakda"></div>
+        <div class="thumb cover-arjan2"         title="A for Arjan 2"></div>
+        <div class="thumb cover-timetable"      title="Time Table 2"></div>
+        <div class="thumb cover-parmish-teriyan" title="Teriyan Deedan"></div>
+        <div class="thumb cover-cobra"          title="Cobra"></div>
+        <div class="thumb cover-sidhu-dhakka"   title="Dhakka"></div>
+        <div class="thumb cover-palazzo2"       title="Palazzo 2"></div>
+        <div class="thumb cover-babbu-neeli"    title="Neeli Chhat"></div>
+        <div class="thumb cover-jawani"         title="Jawani"></div>
+        <div class="thumb cover-cheema-snake"   title="Snake"></div>
+        <div class="thumb cover-ap-brownprint"  title="Brown Print"></div>
+        <div class="thumb cover-parmish-paindi" title="Paindi Aa Dhakk"></div>
+        <div class="thumb cover-malai"          title="Malai"></div>
+        <div class="thumb cover-nimrat-ajjkal"  title="Ajj Kal"></div>
+        <div class="thumb cover-babbu-pyass"    title="Pyass"></div>
+        <div class="thumb cover-jatta"          title="Jatta Love You"></div>
+        <div class="thumb cover-panjab"         title="Panjab"></div>
+        <div class="thumb cover-sharry-hits"    title="Sharry Maan Hits"></div>
+      </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="main">
+      <!-- TOP BAR -->
+      <header class="topbar">
+        <div class="topbar-nav">
+          <button class="round-btn" id="backBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="round-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+
+        <div class="search">
+          <button class="home-btn" id="homeBtn" title="Home"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v10h-5v-7H11v7H6V11H3l9-8z"/></svg></button>
+          <div class="search-input">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 2a9 9 0 1 1-5.2 16.32l-3.54 3.54-1.42-1.42 3.54-3.54A9 9 0 0 1 11 2zm0 2a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+            <input type="text" placeholder="What do you want to play?" />
+            <button class="browse-btn" title="Browse"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"/></svg></button>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="round-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+          <button class="round-btn" title="Friend Activity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></button>
+          <div class="avatar">P</div>
+        </div>
+      </header>
+
+      <!-- ============================================================ -->
+      <!-- DECOY VIEW — Spotify clone                                   -->
+      <!-- ============================================================ -->
+      <section class="spotify-view" id="spotifyView">
+        <div class="spotify-scroll">
+          <!-- ARTIST HERO BANNER -->
+          <div class="artist-banner">
+            <div class="artist-banner-bg"></div>
+            <div class="artist-banner-inner">
+              <span class="verified-tag"><svg viewBox="0 0 24 24" fill="#3b82f6"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="white" stroke-width="1.5" fill="#3b82f6"/></svg> Verified Artist</span>
+              <h1 class="artist-name-big">Arjan Dhillon</h1>
+              <span class="artist-listeners">3,697,564 monthly listeners</span>
+            </div>
+          </div>
+
+          <!-- ACTION BAR -->
+          <div class="artist-action-bar">
+            <button class="big-play-btn" id="bigPlayBtn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 21 12 7 20 7 4"/></svg>
+            </button>
+            <button class="follow-btn-lg">Following</button>
+            <button class="dots-btn"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></button>
+          </div>
+
+          <!-- POPULAR TRACKS -->
+          <div class="section-row">
+            <h2>Popular</h2>
+          </div>
+          <div class="track-list">
+            <div class="track-row">
+              <span class="track-num">1</span>
+              <div class="track-art cover-palazzo"></div>
+              <div class="track-info">
+                <div class="track-title">Palazzo</div>
+                <div class="track-sub">Arjan Dhillon, Shivjot</div>
+              </div>
+              <span class="track-plays">142,890,571</span>
+              <span class="track-time">3:23</span>
+            </div>
+            <div class="track-row">
+              <span class="track-num">2</span>
+              <div class="track-art cover-patandar"></div>
+              <div class="track-info">
+                <div class="track-title">Patandar</div>
+                <div class="track-sub">Arjan Dhillon</div>
+              </div>
+              <span class="track-plays">98,221,403</span>
+              <span class="track-time">2:58</span>
+            </div>
+            <div class="track-row">
+              <span class="track-num">3</span>
+              <div class="track-art cover-vlog"></div>
+              <div class="track-info">
+                <div class="track-title">Vlog</div>
+                <div class="track-sub">From "Viyaah Kartaare Da"</div>
+              </div>
+              <span class="track-plays">76,005,210</span>
+              <span class="track-time">3:12</span>
+            </div>
+            <div class="track-row">
+              <span class="track-num">4</span>
+              <div class="track-art cover-arjan2"></div>
+              <div class="track-info">
+                <div class="track-title">A for Arjan 2</div>
+                <div class="track-sub">Arjan Dhillon</div>
+              </div>
+              <span class="track-plays">61,420,778</span>
+              <span class="track-time">3:48</span>
+            </div>
+            <div class="track-row">
+              <span class="track-num">5</span>
+              <div class="track-art cover-chobar"></div>
+              <div class="track-info">
+                <div class="track-title">Chobar</div>
+                <div class="track-sub">Arjan Dhillon</div>
+              </div>
+              <span class="track-plays">52,887,116</span>
+              <span class="track-time">3:01</span>
+            </div>
+          </div>
+
+          <!-- ALBUMS -->
+          <div class="section-row">
+            <h2>Discography</h2>
+            <a class="show-all">Show all</a>
+          </div>
+          <div class="album-row">
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-vlog"></div></div>
+              <div class="album-title">Vlog (From "Viyaah Kartaare Da")</div>
+              <div class="album-sub">Latest Release • Single</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-patandar"></div></div>
+              <div class="album-title">Patandar</div>
+              <div class="album-sub">2024 • Album</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-arjan2"></div></div>
+              <div class="album-title">A for Arjan 2</div>
+              <div class="album-sub">2025 • Album</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-chobar"></div></div>
+              <div class="album-title">Chobar</div>
+              <div class="album-sub">2024 • Album</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-arjan"></div></div>
+              <div class="album-title">A for Arjan</div>
+              <div class="album-sub">2022 • Album</div>
+            </div>
+          </div>
+
+          <!-- JUST DROPPED -->
+          <div class="section-row">
+            <h2>Just Dropped</h2>
+            <a class="show-all">Show all</a>
+          </div>
+          <div class="album-row">
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-jatta"></div></div>
+              <div class="album-title">Jatta Love You</div>
+              <div class="album-sub">Gulab Sidhu, Jasmeen Akhtar</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-jawani"></div></div>
+              <div class="album-title">Jawani</div>
+              <div class="album-sub">Gulab Sidhu × Gaiphy</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-cobra"></div></div>
+              <div class="album-title">Cobra</div>
+              <div class="album-sub">Jazzy B, Black Virus</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-palazzo2"></div></div>
+              <div class="album-title">Palazzo 2</div>
+              <div class="album-sub">Kulwinder Billa ft. Shivjot</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-malai"></div></div>
+              <div class="album-title">Tere Pyaar Mein</div>
+              <div class="album-sub">Arijit Singh, Nikhita Gandhi</div>
+            </div>
+          </div>
+
+          <!-- TRENDING PUNJABI -->
+          <div class="section-row">
+            <h2>Trending Punjabi</h2>
+            <a class="show-all">Show all</a>
+          </div>
+          <div class="album-row">
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-cheema-anyway"></div></div>
+              <div class="album-title">Anyway</div>
+              <div class="album-sub">Cheema Y</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-sidhu-legend"></div></div>
+              <div class="album-title">Legend</div>
+              <div class="album-sub">Sidhu Moose Wala</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-karan-ppop"></div></div>
+              <div class="album-title">P-Pop Culture</div>
+              <div class="album-sub">Karan Aujla</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-sidhu-dhakka"></div></div>
+              <div class="album-title">Dhakka</div>
+              <div class="album-sub">Sidhu Moose Wala</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-nimrat-time"></div></div>
+              <div class="album-title">Time Chakda</div>
+              <div class="album-sub">Nimrat Khaira</div>
+            </div>
+          </div>
+
+          <!-- ALBUMS & PLAYLISTS -->
+          <div class="section-row">
+            <h2>Albums & Playlists</h2>
+            <a class="show-all">Show all</a>
+          </div>
+          <div class="album-row">
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-sharry-hits"></div></div>
+              <div class="album-title">All Time Hits</div>
+              <div class="album-sub">Sharry Maan • Birthday Special</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-panjab"></div></div>
+              <div class="album-title">Panjab</div>
+              <div class="album-sub">Babbu Maan</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-ap-allsongs"></div></div>
+              <div class="album-title">AP Dhillon — All Songs</div>
+              <div class="album-sub">Playlist</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-night"></div></div>
+              <div class="album-title">Night Drive</div>
+              <div class="album-sub">Curated mix</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-ap-brownprint"></div></div>
+              <div class="album-title">Brown Print</div>
+              <div class="album-sub">AP Dhillon</div>
+            </div>
+          </div>
+
+          <!-- MORE PUNJABI HITS -->
+          <div class="section-row">
+            <h2>More Punjabi Hits</h2>
+            <a class="show-all">Show all</a>
+          </div>
+          <div class="album-row">
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-timetable"></div></div>
+              <div class="album-title">Time Table 2</div>
+              <div class="album-sub">Kulwinder Billa</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-nimrat-ajjkal"></div></div>
+              <div class="album-title">Ajj Kal Ajj Kal</div>
+              <div class="album-sub">Nimrat Khaira</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-cheema-snake"></div></div>
+              <div class="album-title">Snake</div>
+              <div class="album-sub">Cheema Y</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-parmish-teriyan"></div></div>
+              <div class="album-title">Teriyan Deedan</div>
+              <div class="album-sub">Parmish Verma</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-babbu-neeli"></div></div>
+              <div class="album-title">Neeli Chhat</div>
+              <div class="album-sub">Babbu Maan</div>
+            </div>
+          </div>
+
+          <!-- ALSO POPULAR -->
+          <div class="section-row">
+            <h2>Also popular</h2>
+            <a class="show-all">Show all</a>
+          </div>
+          <div class="album-row">
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-ap-brownprint"></div></div>
+              <div class="album-title">Brown Print</div>
+              <div class="album-sub">AP Dhillon</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-parmish-paindi"></div></div>
+              <div class="album-title">Paindi Aa Dhakk</div>
+              <div class="album-sub">Parmish Verma</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-babbu-pyass"></div></div>
+              <div class="album-title">Pyass</div>
+              <div class="album-sub">Babbu Maan</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-timetable-lyrical"></div></div>
+              <div class="album-title">Time Table 2 (Lyrical)</div>
+              <div class="album-sub">Kulwinder Billa</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="album-art cover-sidhu-car"></div></div>
+              <div class="album-title">Bambiha Bole</div>
+              <div class="album-sub">Sidhu Moose Wala</div>
+            </div>
+          </div>
+
+          <!-- FANS LIKE -->
+          <div class="section-row">
+            <h2>Fans also like</h2>
+            <a class="show-all">Show all</a>
+          </div>
+          <div class="album-row artist-row">
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="artist-circle cover-prem"></div></div>
+              <div class="album-title">Prem Dhillon</div>
+              <div class="album-sub">Artist</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="artist-circle cover-hustinder"></div></div>
+              <div class="album-title">HUSTINDER</div>
+              <div class="album-sub">Artist</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="artist-circle cover-saabi"></div></div>
+              <div class="album-title">Saabi Bhinder</div>
+              <div class="album-sub">Artist</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="artist-circle cover-jordan"></div></div>
+              <div class="album-title">Jordan Sandhu</div>
+              <div class="album-sub">Artist</div>
+            </div>
+            <div class="album-card">
+              <div class="album-art-wrap"><div class="artist-circle cover-gulab"></div></div>
+              <div class="album-title">Gulab Sidhu</div>
+              <div class="album-sub">Artist</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <aside class="right-panel">
+          <div class="right-head">
+            <span class="right-title">Palazzo</span>
+            <div class="right-actions">
+              <button class="round-btn" title="Hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+              <button class="round-btn" title="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+            </div>
+          </div>
+
+          <div class="np-cover cover-palazzo"></div>
+
+          <div class="np-meta">
+            <div class="np-title">Palazzo</div>
+            <div class="np-artist">Arjan Dhillon, Shivjot</div>
+          </div>
+
+          <div class="about-block">
+            <div class="about-head">About the artist</div>
+            <div class="artist-bio-photo cover-arjan-photo"></div>
+            <div class="bio-verified">
+              <svg viewBox="0 0 24 24" fill="#3b82f6"><circle cx="12" cy="12" r="11" fill="#3b82f6"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2.5" fill="none"/></svg>
+              Verified Artist
+            </div>
+            <div class="bio-listeners">3,697,564 monthly listeners</div>
+            <button class="follow-btn">Following</button>
+            <p class="bio-text">
+              Arjan Dhillon is one of the most powerful voices in today's Punjabi
+              music scene. His writing and performance have established him as
+              a true artist of his generation.
+            </p>
+          </div>
+
+          <div class="about-block">
+            <div class="about-head">Credits</div>
+            <div class="credit-row">
+              <div>
+                <div class="credit-name">Arjan Dhillon</div>
+                <div class="credit-role">Main Artist, Composer</div>
+              </div>
+              <button class="follow-btn small">Follow</button>
+            </div>
+            <div class="credit-row">
+              <div>
+                <div class="credit-name">Shivjot</div>
+                <div class="credit-role">Featured Artist</div>
+              </div>
+              <button class="follow-btn small">Follow</button>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- REAL APP VIEW (hidden until + is clicked)                    -->
+      <!-- ============================================================ -->
+      <section class="app-view" id="appView" hidden>
+        <div class="app-view-head">
+          <div>
+            <span class="app-tag">SYSTEM CONSOLE</span>
+            <h1>System Activity Control</h1>
+          </div>
+          <button class="exit-btn" id="exitAppViewBtn" title="Back to library">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back</span>
+          </button>
+        </div>
+
+        <div class="app-nav-tabs">
+          <button class="tab active" data-tab="dashboard">Dashboard</button>
+          <button class="tab" data-tab="controls">Activity Controls</button>
+          <button class="tab" data-tab="speed">Speed</button>
+          <button class="tab" data-tab="hotkeys">Hotkeys</button>
+          <button class="tab" data-tab="logs">Logs</button>
+        </div>
+
+        <div class="tab-panel" data-tab="dashboard">
+          <div class="hero" id="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+              <span class="hero-tag">SYSTEM ACTIVITY</span>
+              <h1 class="hero-title" id="heroTitle">Inactive</h1>
+              <p class="hero-sub" id="heroSub">Press play to start automation</p>
+              <div class="hero-meta">
+                <span class="meta-chip"><span class="dot" id="heroDot"></span><span id="heroPlatform">Windows</span></span>
+                <span class="meta-chip"><span id="heroSpeedBadge">Medium speed</span></span>
+                <span class="meta-chip"><span id="heroCtrlBadge">0/4 controllers</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="play-btn" id="playBtn">
+              <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+            </button>
+            <button class="ghost-btn" id="stopBtn"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg> Stop</button>
+            <button class="ghost-btn" id="hideBtn2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg> Hide to Tray</button>
+            <div class="action-spacer"></div>
+            <button class="ghost-btn" id="permBtn">Check Permissions</button>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-label">Active Controllers</span>
+              <div class="stat-value" id="statCtrl">0/4</div>
+              <div class="stat-bar"><div class="stat-bar-fill" id="ctrlBar" style="width:0%"></div></div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Current Speed</span>
+              <div class="stat-value accent" id="statSpeed">Medium</div>
+              <div class="speed-pills">
+                <button class="pill" data-speed="Basic">Basic</button>
+                <button class="pill active" data-speed="Medium">Medium</button>
+                <button class="pill" data-speed="High">High</button>
+                <button class="pill" data-speed="Ultra High">Ultra</button>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Platform</span>
+              <div class="stat-value accent2" id="statPlatform">Windows</div>
+              <div class="stat-sub" id="statPlatformSub">Detecting...</div>
+            </div>
+          </div>
+
+          <div class="section-head">
+            <h2>Active Controllers</h2>
+            <span class="muted" id="ctrlSummary">All idle</span>
+          </div>
+          <div class="ctrl-grid" id="ctrlGrid">
+            <div class="ctrl-card" data-key="mouse">
+              <div class="ctrl-icon mouse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="6"/><line x1="12" y1="6" x2="12" y2="10"/></svg></div>
+              <div class="ctrl-name">Mouse</div>
+              <div class="ctrl-status"><span class="dot off"></span><span class="ctrl-state">Inactive</span></div>
+            </div>
+            <div class="ctrl-card" data-key="keyboard">
+              <div class="ctrl-icon keyboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
+              <div class="ctrl-name">Keyboard</div>
+              <div class="ctrl-status"><span class="dot off"></span><span class="ctrl-state">Inactive</span></div>
+            </div>
+            <div class="ctrl-card" data-key="browser">
+              <div class="ctrl-icon browser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <div class="ctrl-name">Browser</div>
+              <div class="ctrl-status"><span class="dot off"></span><span class="ctrl-state">Inactive</span></div>
+            </div>
+            <div class="ctrl-card" data-key="vscode">
+              <div class="ctrl-icon vscode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+              <div class="ctrl-name">VS Code</div>
+              <div class="ctrl-status"><span class="dot off"></span><span class="ctrl-state">Inactive</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="controls" hidden>
+          <div class="section-head"><h2>Activity Controls</h2><span class="muted">Toggle individual modules</span></div>
+          <div class="toggle-list" id="toggleList"></div>
+        </div>
+
+        <div class="tab-panel" data-tab="speed" hidden>
+          <div class="section-head"><h2>Speed Settings</h2><span class="muted">Tune automation cadence</span></div>
+          <div class="speed-grid">
+            <div class="speed-card" data-speed="Basic"><h3>Basic</h3><p>Slow & natural</p><span class="speed-detail">5–10s intervals</span></div>
+            <div class="speed-card" data-speed="Medium"><h3>Medium</h3><p>Balanced</p><span class="speed-detail">3–7s intervals</span></div>
+            <div class="speed-card" data-speed="High"><h3>High</h3><p>Brisk</p><span class="speed-detail">2–4s intervals</span></div>
+            <div class="speed-card" data-speed="Ultra High"><h3>Ultra</h3><p>Aggressive</p><span class="speed-detail">1–2s intervals</span></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="hotkeys" hidden>
+          <div class="section-head"><h2>Hotkeys</h2><span class="muted">Global keyboard shortcuts</span></div>
+          <div class="hotkey-list">
+            <div class="hotkey-row"><span>Start automation</span><span><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd></span></div>
+            <div class="hotkey-row"><span>Stop automation</span><span><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>X</kbd></span></div>
+            <div class="hotkey-row"><span>Hide to tray</span><span><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd></span></div>
+            <div class="hotkey-row"><span>Show window</span><span><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd></span></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab="logs" hidden>
+          <div class="section-head"><h2>Activity Log</h2><span class="muted" id="logCount">0 entries</span></div>
+          <div class="log-feed" id="logFeed"></div>
+        </div>
+      </section>
+
+      <!-- NOW-PLAYING BAR -->
+      <footer class="now-bar">
+        <div class="now-left">
+          <div class="now-art cover-palazzo" id="nowArt"></div>
+          <div class="now-text">
+            <div class="now-title" id="nowTitle">Palazzo</div>
+            <div class="now-sub" id="nowSub">Arjan Dhillon, Shivjot</div>
+          </div>
+          <button class="now-fav" title="Save to Liked Songs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <button class="now-fav" title="Picture in picture">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12" y="11" width="7" height="6" rx="1" fill="currentColor"/></svg>
+          </button>
+        </div>
+
+        <div class="now-center">
+          <div class="now-controls">
+            <button class="now-icon-sm" title="Shuffle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></button>
+            <button class="now-icon-sm" title="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="19 20 9 12 19 4 19 20"/><rect x="5" y="4" width="2" height="16"/></svg></button>
+            <button class="now-icon" id="nowToggle" title="Play"><svg id="nowToggleIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></button>
+            <button class="now-icon-sm" title="Next"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 4 15 12 5 20 5 4"/><rect x="17" y="4" width="2" height="16"/></svg></button>
+            <button class="now-icon-sm" title="Repeat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+          </div>
+          <div class="progress">
+            <span class="time" id="elapsed">1:53</span>
+            <div class="bar" id="progressBar"><div class="bar-fill" id="progressFill" style="width:55%"></div></div>
+            <span class="time">3:23</span>
+          </div>
+        </div>
+
+        <div class="now-right">
+          <button class="now-icon-sm" title="Now playing view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9V7a3 3 0 0 0-6 0v2M9 9V7a3 3 0 0 0-6 0v2"/><rect x="3" y="9" width="6" height="12" rx="1"/><rect x="13" y="9" width="6" height="12" rx="1"/></svg></button>
+          <button class="now-icon-sm" title="Queue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="14" y2="18"/></svg></button>
+          <button class="now-icon-sm" title="Connect to a device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></button>
+
+          <div class="volume-group">
+            <button class="now-icon-sm" id="volIcon" title="Mute">
+              <svg viewBox="0 0 24 24" fill="currentColor" id="volIconSvg"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" fill="none"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            </button>
+            <div class="volume-bar" id="volumeBar">
+              <div class="volume-fill" id="volumeFill" style="width:65%"></div>
+              <div class="volume-thumb" style="left:65%"></div>
+            </div>
+          </div>
+
+          <button class="now-icon-sm" title="Miniplayer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="13" y="11" width="6" height="6" rx="1" fill="currentColor"/></svg></button>
+          <button class="now-icon-sm" title="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 4 20 10 20"/><polyline points="20 10 20 4 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

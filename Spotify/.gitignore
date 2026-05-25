@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# PyInstaller intermediate build artifacts (rebuilt every time)
+build/
+build_exe/
+build_modern_exe/
+*.manifest
+# Note: dist/ is intentionally NOT ignored — the shipped exe lives there.
+
+# Runtime
+wfh.log
+*.log
+
+# UI build output
+ui/dist/
+
+# Installer output
+installer_output/
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

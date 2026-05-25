@@ -1,0 +1,26 @@
+{
+    "mouse": {
+        "enabled": true,
+        "move_interval_min": 2,
+        "move_interval_max": 5,
+        "click_probability": 0.3,
+        "scroll_probability": 0.2
+    },
+    "keyboard": {
+        "enabled": true,
+        "type_interval_min": 5,
+        "type_interval_max": 12,
+        "typing_speed_min": 0.05,
+        "typing_speed_max": 0.15
+    },
+    "vscode": {
+        "enabled": true,
+        "tab_switch_interval_min": 4,
+        "tab_switch_interval_max": 10,
+        "switch_via_ctrl_tab": true
+    },
+    "general": {
+        "smooth_movement": true,
+        "bezier_curves": true
+    }
+}
